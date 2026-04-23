@@ -150,7 +150,12 @@ REST_FRAMEWORK = {
 # CORS (django-cors-headers)
 # ---------------------------------------------------------------------------
 
-CORS_ALLOW_ALL_ORIGINS = True  # Development only – lock down in production
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+CORS_ALLOW_CREDENTIALS = True
 
 
 # ---------------------------------------------------------------------------
@@ -162,3 +167,7 @@ CSRF_COOKIE_HTTPONLY = False        # Allow frontend JS to read the CSRF token
 CSRF_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = False       # Set to True in production with HTTPS
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
