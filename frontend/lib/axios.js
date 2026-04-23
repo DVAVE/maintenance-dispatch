@@ -5,9 +5,8 @@ const axiosInstance = axios.create({
   withCredentials: true,
 });
 
-
 // Global 401 interceptor — redirect to login on any unauthenticated response
-api.interceptors.response.use(
+axiosInstance.interceptors.response.use(  // ← Changed from 'api' to 'axiosInstance'
   (response) => response,
   (error) => {
     if (error.response?.status === 401 && typeof window !== 'undefined') {
