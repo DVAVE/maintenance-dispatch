@@ -159,5 +159,6 @@ CORS_ALLOW_ALL_ORIGINS = True  # Development only – lock down in production
 
 SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_HTTPONLY = False        # Allow frontend JS to read the CSRF token
+CSRF_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = False       # Set to True in production with HTTPS
